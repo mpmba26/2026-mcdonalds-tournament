@@ -53,8 +53,7 @@ export default function RulesPage() {
               </li>
 
               <li>
-                Any pitching change must be reported immediately to both the
-                umpire and the GameChanger scorekeeper.
+                Any pitching change must be reported immediately to the umpire.
               </li>
 
               <li>
@@ -112,58 +111,48 @@ export default function RulesPage() {
           </section>
 
           {/* Pitch Count */}
-          <section className="rounded-2xl bg-white p-6 shadow-lg">
-            <h2 className="text-2xl font-bold text-[#002B5C]">
-              Pitch Count Rules (11U AA &amp; 11U AAA)
-            </h2>
+<section className="rounded-2xl bg-white p-6 shadow-lg">
+  <h2 className="text-2xl font-bold text-[#002B5C]">
+    Pitch Count Rules (11U AA &amp; 11U AAA)
+  </h2>
 
-            <p className="mt-4 text-slate-700">
-              The tournament will follow the Baseball NL Pitch Count Rules.
-            </p>
+  <p className="mt-4 text-slate-700">
+    The tournament will follow the current Baseball NL Pitch Count Rules.
+  </p>
 
-            <p className="mt-4 text-slate-700">
-              Pitch counts will be tracked using <strong>GameChanger</strong>.
-            </p>
+  <p className="mt-4 text-slate-700">
+    All 11U AA and 11U AAA games will be scored using{" "}
+    <strong>GameChanger</strong>. Official tournament pitch counts will be
+    tracked through GameChanger.
+  </p>
 
-            <ul className="mt-4 list-disc space-y-3 pl-6 text-slate-700">
-              <li>
-                Mount Pearl teams will act as the lead GameChanger scorekeeper
-                for games involving Mount Pearl.
-              </li>
+  <ul className="mt-4 list-disc space-y-3 pl-6 text-slate-700">
+    <li>
+      Mount Pearl teams will act as the lead GameChanger scorekeeper for
+      games involving Mount Pearl.
+    </li>
 
-              <li>
-                For games not involving Mount Pearl, one participating team
-                will be designated as the lead GameChanger scorekeeper.
-              </li>
+    <li>
+      For games not involving Mount Pearl, one participating team will be
+      designated as the official GameChanger scorekeeper.
+    </li>
 
-              <li>
-                Coaches are responsible for ensuring every pitching change is
-                communicated to the GameChanger scorekeeper.
-              </li>
+    <li>
+      Any pitching change must be reported immediately to both the umpire
+      and the GameChanger scorekeeper.
+    </li>
 
-              <li>
-                Official tournament pitch counts will be taken from
-                GameChanger.
-              </li>
-            </ul>
+    <li>
+      Coaches are responsible for ensuring all pitching changes are
+      communicated and that official pitch counts are accurate.
+    </li>
+  </ul>
 
-            <p className="mt-5 text-slate-700">
-              Pitch counts will be managed using the coach&apos;s honour system.
-            </p>
-
-            <p className="mt-4 text-slate-700">
-              When a pitcher reaches a Baseball NL pitch count threshold,
-              coaches are expected to call for the final batter at the
-              appropriate threshold (25, 30, 40, 45, 65, 75 or 85 pitches).
-              GameChanger should reflect the pitcher leaving the game within a
-              reasonable number of pitches after that threshold.
-            </p>
-
-            <p className="mt-4 text-slate-700">
-              A pitch count report will be distributed to all teams each
-              evening.
-            </p>
-          </section>
+  <p className="mt-5 text-slate-700">
+    Pitch counts will be managed using the coach&apos;s honour system and
+    Baseball NL Pitch Count Rules.
+  </p>
+</section>
 
           {/* Pitcher/Catcher */}
           <section className="rounded-2xl bg-white p-6 shadow-lg">
@@ -184,67 +173,85 @@ export default function RulesPage() {
             </ul>
           </section>
 
-          {/* 11U A */}
-          <section className="rounded-2xl bg-white p-6 shadow-lg">
-            <h2 className="text-2xl font-bold text-[#002B5C]">
-              11U A Modified Rules
-            </h2>
+         {/* 11U A */}
+<section className="rounded-2xl bg-white p-6 shadow-lg">
+  <h2 className="text-2xl font-bold text-[#002B5C]">
+    11U A Modified Rules
+  </h2>
 
-            <h3 className="mt-5 text-xl font-bold text-[#002B5C]">
-              Pitch Count
-            </h3>
+  <h3 className="mt-5 text-xl font-bold text-[#002B5C]">
+    Pitch Count Reporting
+  </h3>
 
-            <p className="mt-3 text-slate-700">
-              Pitch counts for all 11U A pitchers will be tracked throughout
-              the tournament in accordance with the current Baseball NL Pitch
-              Count Guidelines.
-            </p>
+  <p className="mt-3 text-slate-700">
+    Pitch counts for all 11U A pitchers will follow the current Baseball NL
+    Pitch Count Guidelines.
+  </p>
 
-            <p className="mt-4 text-slate-700">
-              Pitch counts will be recorded in <strong>GameChanger</strong>.
-              Coaches are responsible for ensuring all pitching changes are
-              communicated to the official GameChanger scorekeeper.
-            </p>
+  <p className="mt-4 text-slate-700">
+    <strong>GameChanger will not be used for 11U A games.</strong>
+  </p>
 
-            <h3 className="mt-6 text-xl font-bold text-[#002B5C]">
-              Pitching
-            </h3>
+  <p className="mt-4 text-slate-700">
+    After every game, the coach (or designate) must email the following
+    information to:
+  </p>
 
-            <ul className="mt-3 list-disc space-y-3 pl-6 text-slate-700">
-              <li>
-                After four balls, the coach will enter to pitch while the
-                existing strike count remains.
-              </li>
+  <p className="mt-3 text-lg font-bold text-[#002B5C] break-all">
+    mountpearlminorbaseball@gmail.com
+  </p>
 
-              <li>
-                The coach must pitch from approximately 35–40 feet, no closer
-                than just in front of the pitching mound.
-              </li>
-            </ul>
+  <ul className="mt-4 list-disc space-y-3 pl-6 text-slate-700">
+    <li>Team name</li>
+    <li>Final score</li>
+    <li>Number of innings played</li>
+    <li>Complete pitch count information for your team</li>
+  </ul>
 
-            <h3 className="mt-6 text-xl font-bold text-[#002B5C]">
-              Base Running
-            </h3>
+  <p className="mt-5 text-slate-700">
+    This information will be used to maintain official tournament pitch
+    count records.
+  </p>
 
-            <ul className="mt-3 list-disc space-y-3 pl-6 text-slate-700">
-              <li>A safety base will be used at first base.</li>
-              <li>Runs may only score on a batted ball.</li>
-              <li>A runner may not score on an overthrow.</li>
-            </ul>
+  <h3 className="mt-6 text-xl font-bold text-[#002B5C]">
+    Pitching
+  </h3>
 
-            <h3 className="mt-6 text-xl font-bold text-[#002B5C]">
-              Runs Per Inning
-            </h3>
+  <ul className="mt-3 list-disc space-y-3 pl-6 text-slate-700">
+    <li>
+      After four balls, the coach will enter to pitch while the existing
+      strike count remains.
+    </li>
 
-            <ul className="mt-3 list-disc space-y-3 pl-6 text-slate-700">
-              <li>Maximum of 3 runs per inning.</li>
-              <li>The final inning is an open inning with unlimited runs.</li>
-              <li>
-                The open inning will be the next full inning beginning after
-                the 1 hour and 45 minute time limit has been reached.
-              </li>
-            </ul>
-          </section>
+    <li>
+      The coach must pitch from approximately 35–40 feet, no closer than
+      just in front of the pitching mound.
+    </li>
+  </ul>
+
+  <h3 className="mt-6 text-xl font-bold text-[#002B5C]">
+    Base Running
+  </h3>
+
+  <ul className="mt-3 list-disc space-y-3 pl-6 text-slate-700">
+    <li>A safety base will be used at first base.</li>
+    <li>Runs may only score on a batted ball.</li>
+    <li>A runner may not score on an overthrow.</li>
+  </ul>
+
+  <h3 className="mt-6 text-xl font-bold text-[#002B5C]">
+    Runs Per Inning
+  </h3>
+
+  <ul className="mt-3 list-disc space-y-3 pl-6 text-slate-700">
+    <li>Maximum of 3 runs per inning.</li>
+    <li>The final inning is an open inning with unlimited runs.</li>
+    <li>
+      The open inning will be the next full inning beginning after the
+      1 hour and 45 minute time limit has been reached.
+    </li>
+  </ul>
+</section>
 
                     {/* Contact */}
           <section className="rounded-2xl bg-white p-6 shadow-lg">
