@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "2026 MPMBA McDonald's Tournament",
+  title: "MPMBA Tournaments",
   description:
-    "Official website for the 2026 Mount Pearl Minor Baseball McDonald's Tournament.",
+    "MPMBA Tournaments",
 
   icons: {
     icon: "/icon-192.png",
