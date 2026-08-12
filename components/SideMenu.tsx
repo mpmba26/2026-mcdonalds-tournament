@@ -34,7 +34,7 @@ export default function SideMenu({
       {/* Overlay */}
       <div
         onClick={onClose}
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[10000] bg-black/40 transition-opacity duration-300 ${
           isOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -43,7 +43,7 @@ export default function SideMenu({
 
       {/* Menu */}
       <aside
-        className={`fixed left-0 top-0 z-50 flex h-full w-72 flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out ${
+        className={`fixed left-0 top-0 z-[10001] flex h-full w-72 flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
