@@ -81,7 +81,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-1 text-green-800">
-                All games are on schedule.
+                Currently no weather delays.
               </p>
             </div>
           </div>
