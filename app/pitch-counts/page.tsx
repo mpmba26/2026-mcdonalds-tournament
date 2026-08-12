@@ -1,78 +1,48 @@
 "use client";
 
-import { useState } from "react";
 import AppHeader from "@/components/AppHeader";
 import { ExternalLink } from "lucide-react";
 
-const divisions = [
-  {
-    name: "11U A",
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_4LTls01QvNv4lsZwOw0pBlVMNpFVAZUppGXSFlcBIWXChrEXHMAKr38fsVa2dpYbXmZgoQNo4l1a/pubhtml?gid=1473424599&single=true&widget=true&headers=false",
-  },
-  {
-    name: "11U AA",
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_4LTls01QvNv4lsZwOw0pBlVMNpFVAZUppGXSFlcBIWXChrEXHMAKr38fsVa2dpYbXmZgoQNo4l1a/pubhtml?gid=599228539&single=true&widget=true&headers=false",
-  },
-  {
-    name: "11U AAA",
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_4LTls01QvNv4lsZwOw0pBlVMNpFVAZUppGXSFlcBIWXChrEXHMAKr38fsVa2dpYbXmZgoQNo4l1a/pubhtml?gid=1476598743&single=true&widget=true&headers=false",
-  },
-];
-
-const sheetUrl =
-  "https://docs.google.com/spreadsheets/d/1gS-TU0lVuIxUDdJKY0QDAX7aO4IilwPdwWfs4Eqr2MU/edit?usp=sharing";
-
 export default function PitchCountsPage() {
-  const [selectedDivision, setSelectedDivision] = useState(divisions[0]);
-
   return (
     <>
-      <AppHeader title="Pitch Counts" />
+      <AppHeader title="Pitch Tracking" />
 
-      <main className="min-h-screen bg-[#EAF3FB] py-6 px-4">
-        <div className="mx-auto max-w-7xl">
+      <main className="min-h-screen bg-[#EAF3FB] px-4 py-6">
+        <div className="mx-auto max-w-6xl space-y-6">
 
-          {/* Division Tabs */}
-          <div className="mb-6 flex justify-center gap-3 flex-wrap">
-            {divisions.map((division) => (
-              <button
-                key={division.name}
-                onClick={() => setSelectedDivision(division)}
-                className={`rounded-xl px-5 py-3 font-semibold transition ${
-                  selectedDivision.name === division.name
-                    ? "bg-[#002B5C] text-white shadow-lg"
-                    : "bg-white text-[#002B5C] shadow hover:bg-slate-100"
-                }`}
-              >
-                {division.name}
-              </button>
-            ))}
-          </div>
+          {/* Pitch Tracking */}
+          <section className="rounded-2xl bg-white p-4 shadow-lg md:p-6">
+            <h2 className="text-2xl font-bold text-[#002B5C]">
+              11U House League Pitch Tracking
+            </h2>
 
-          {/* Google Sheet */}
-          <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
-            <iframe
-              key={selectedDivision.url}
-              src={selectedDivision.url}
-              title={`${selectedDivision.name} Pitch Counts`}
-              width="100%"
-              height="1200"
-              className="border-0"
-            />
-          </div>
+            <p className="mt-3 text-slate-700">
+              Pitch tracking for the 11U House League Tournament.
+            </p>
+
+            <div className="mt-5 overflow-hidden rounded-xl border border-slate-200">
+              <iframe
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWPC3N9DePbBbIss0FNZNgSBM1ScVNKCPJRQhre0g4f2kQ9deNXFPSJglqauzESm5O3OL2raa8nKad/pubhtml?gid=0&single=true&widget=true&headers=false"
+                className="h-[700px] w-full"
+                title="11U House League Pitch Tracking"
+              />
+            </div>
+          </section>
 
           {/* Open Full Sheet */}
-          <div className="mt-6 text-center">
+          <section className="pb-4 text-center">
             <a
-              href={sheetUrl}
+              href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWPC3N9DePbBbIss0FNZNgSBM1ScVNKCPJRQhre0g4f2kQ9deNXFPSJglqauzESm5O3OL2raa8nKad/pubhtml?gid=0&single=true&widget=true&headers=false"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#002B5C] px-6 py-3 font-semibold text-white transition hover:bg-[#003B80]"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#002B5C] px-6 py-3 font-semibold text-white shadow-md transition hover:bg-[#003B80]"
             >
               <ExternalLink size={18} />
               Open Full Sheet
             </a>
-          </div>
+          </section>
+
         </div>
       </main>
     </>
