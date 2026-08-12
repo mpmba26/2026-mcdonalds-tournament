@@ -7,10 +7,7 @@ import {
   X,
   House,
   CalendarDays,
-  Trophy,
-  MapPinned,
   BookOpen,
-  Camera,
 } from "lucide-react";
 import { FaBaseballBall } from "react-icons/fa";
 
@@ -27,12 +24,9 @@ export default function SideMenu({
 
   const menuItems = [
     { title: "Home", href: "/", icon: House },
-    { title: "Schedule", href: "/schedule", icon: CalendarDays },
-    { title: "Live Scores", href: "/scores", icon: Trophy },
-    { title: "Pitch Counts", href: "/pitch-counts", icon: FaBaseballBall },
-    { title: "Fields", href: "/maps", icon: MapPinned },
+    { title: "Schedule / Scores", href: "/schedule", icon: CalendarDays },
+    { title: "Pitch Tracking", href: "/pitch-counts", icon: FaBaseballBall },
     { title: "Rules", href: "/rules", icon: BookOpen },
-    { title: "Photos", href: "/photos", icon: Camera },
   ];
 
   return (
@@ -42,8 +36,8 @@ export default function SideMenu({
         onClick={onClose}
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${
           isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
       />
 
@@ -55,41 +49,39 @@ export default function SideMenu({
       >
         {/* Header */}
         <div className="border-b p-5">
-
           <div className="mb-4 flex items-center justify-between">
-
             <div className="flex items-center gap-3">
-
               <Image
                 src="/images/logo.png"
-                alt="Tournament Logo"
+                alt="Mount Pearl Minor Baseball"
                 width={44}
                 height={44}
               />
 
               <div>
                 <h2 className="text-lg font-bold text-[#002B5C]">
-                  2026 MPMBA
+                  MPMBA 11U
                 </h2>
 
                 <p className="text-sm text-slate-600">
-                  McDonald's Tournament
+                  House League Tournament
                 </p>
               </div>
-
             </div>
 
-            <button onClick={onClose}>
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close menu"
+              className="rounded-lg p-1 hover:bg-slate-100"
+            >
               <X size={28} />
             </button>
-
           </div>
-
         </div>
 
         {/* Navigation */}
         <nav className="flex-1">
-
           {menuItems.map((item) => (
             <Link
               key={item.href}
@@ -113,7 +105,6 @@ export default function SideMenu({
               {item.title}
             </Link>
           ))}
-
         </nav>
 
         {/* Footer */}
