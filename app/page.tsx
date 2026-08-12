@@ -67,6 +67,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Tournament Status */}
+      <section className="mx-auto max-w-4xl px-5 pb-6">
+        <div className="rounded-2xl bg-green-100 p-5 shadow-lg">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500 text-xl font-bold text-white">
+              ✓
+            </div>
+
+            <div>
+              <h2 className="text-lg font-bold text-green-900">
+                Tournament Status
+              </h2>
+
+              <p className="mt-1 text-green-800">
+                All games are on schedule.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Association Links */}
       <section className="mx-auto max-w-4xl px-5 pb-10">
         <div className="rounded-2xl bg-white p-6 shadow-lg">
