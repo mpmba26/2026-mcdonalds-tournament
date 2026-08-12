@@ -1,78 +1,47 @@
 "use client";
 
-import { useState } from "react";
 import AppHeader from "@/components/AppHeader";
 import { ExternalLink } from "lucide-react";
 
-const divisions = [
-  {
-    name: "11U A",
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRwKQ3z6EpEqCW7Xvs_JCPi8wcqpKN_LKGiR1Q-gLo00JzC3b2scx6TDTkslBVw2r_srvk3nOis2KdJ/pubhtml?gid=0&single=true&widget=true&headers=false",
-  },
-  {
-    name: "11U AA",
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRwKQ3z6EpEqCW7Xvs_JCPi8wcqpKN_LKGiR1Q-gLo00JzC3b2scx6TDTkslBVw2r_srvk3nOis2KdJ/pubhtml?gid=806121374&single=true&widget=true&headers=false",
-  },
-  {
-    name: "11U AAA",
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRwKQ3z6EpEqCW7Xvs_JCPi8wcqpKN_LKGiR1Q-gLo00JzC3b2scx6TDTkslBVw2r_srvk3nOis2KdJ/pubhtml?gid=24874258&single=true&widget=true&headers=false",
-  },
-];
-
-const sheetUrl =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRwKQ3z6EpEqCW7Xvs_JCPi8wcqpKN_LKGiR1Q-gLo00JzC3b2scx6TDTkslBVw2r_srvk3nOis2KdJ/pubhtml";
-
 export default function SchedulePage() {
-  const [selectedDivision, setSelectedDivision] = useState(divisions[0]);
-
   return (
     <>
-      <AppHeader title="Schedule" />
+      <AppHeader title="Schedule / Scores" />
 
-      <main className="min-h-screen bg-[#EAF3FB] py-6 px-4">
-        <div className="mx-auto max-w-7xl">
+      <main className="min-h-screen bg-[#EAF3FB] px-4 py-6">
+        <div className="mx-auto max-w-6xl space-y-6">
 
-          {/* Division Tabs */}
-          <div className="mb-6 flex justify-center gap-3 flex-wrap">
-            {divisions.map((division) => (
-              <button
-                key={division.name}
-                onClick={() => setSelectedDivision(division)}
-                className={`rounded-xl px-5 py-3 font-semibold transition ${
-                  selectedDivision.name === division.name
-                    ? "bg-[#002B5C] text-white shadow-lg"
-                    : "bg-white text-[#002B5C] shadow hover:bg-slate-100"
-                }`}
-              >
-                {division.name}
-              </button>
-            ))}
-          </div>
+          {/* Schedule / Scores */}
+          <section className="rounded-2xl bg-white p-4 shadow-lg md:p-6">
+            <h2 className="text-2xl font-bold text-[#002B5C]">
+              11U House League Tournament
+            </h2>
 
-          {/* Schedule */}
-          <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
-            <iframe
-              key={selectedDivision.url}
-              src={selectedDivision.url}
-              title={`${selectedDivision.name} Schedule`}
-              width="100%"
-              height="1200"
-              className="border-0"
-            />
-          </div>
+            <p className="mt-3 text-slate-700">
+              Schedule and tournament scores.
+            </p>
 
-          {/* Open Full Schedule */}
-          <div className="mt-6 text-center">
+            <div className="mt-5 overflow-hidden rounded-xl border border-slate-200">
+              <iframe
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcmuqFNoVovF6QMsQtmvvTmzMhfTztJWAfFXUPZtV6A0a4q4B69jSIfZ9haE91bQ7CPrzGobrBbilG/pubhtml?gid=2073201162&single=true&widget=true&headers=false"
+                className="h-[700px] w-full"
+                title="11U House League Tournament Schedule and Scores"
+              />
+            </div>
+          </section>
+
+          {/* Open Full Sheet */}
+          <section className="pb-4 text-center">
             <a
-              href={sheetUrl}
+              href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcmuqFNoVovF6QMsQtmvvTmzMhfTztJWAfFXUPZtV6A0a4q4B69jSIfZ9haE91bQ7CPrzGobrBbilG/pubhtml?gid=2073201162&single=true&widget=true&headers=false"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#002B5C] px-6 py-3 font-semibold text-white transition hover:bg-[#003B80]"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#002B5C] px-6 py-3 font-semibold text-white shadow-md transition hover:bg-[#003B80]"
             >
               <ExternalLink size={18} />
-              Open Full Schedule
+              Open Full Sheet
             </a>
-          </div>
+          </section>
 
         </div>
       </main>
