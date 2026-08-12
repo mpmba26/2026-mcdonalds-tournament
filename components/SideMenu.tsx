@@ -52,7 +52,7 @@ export default function SideMenu({
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Image
-                src="/images/logo.png"
+                src="/images/mp-logo-blue.png"
                 alt="Mount Pearl Minor Baseball"
                 width={44}
                 height={44}
