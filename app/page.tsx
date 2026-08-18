@@ -38,7 +38,7 @@ export default function Home() {
         />
 
         <h1 className="text-3xl font-black leading-tight md:text-5xl">
-          MPMBA 11U
+          MPMBA 13U
           <br />
           House League Tournament
         </h1>
