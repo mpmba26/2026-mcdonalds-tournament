@@ -1,70 +1,50 @@
 "use client";
 
 import AppHeader from "@/components/AppHeader";
-import Script from "next/script";
+import { ExternalLink } from "lucide-react";
 
-export default function ScoresPage() {
+export default function SchedulePage() {
   return (
-    <main className="min-h-screen bg-slate-100">
-      <AppHeader title="Live Scores" />
+    <>
+      <AppHeader title="Schedule / Scores" />
 
-      <div className="mx-auto max-w-4xl p-4 space-y-6">
-        {/* 11U A */}
-        <div className="rounded-2xl bg-white p-5 shadow-lg">
-          <h2 className="mb-4 text-2xl font-bold text-[#002B5C]">
-            11U A
-          </h2>
+      <main className="min-h-screen bg-[#EAF3FB] px-4 py-6">
+        <div className="mx-auto max-w-6xl space-y-6">
 
-          <div id="gc-scoreboard-widget-vmk4"></div>
+          {/* Schedule / Scores */}
+          <section className="rounded-2xl bg-white p-4 shadow-lg md:p-6">
+            <h2 className="text-2xl font-bold text-[#002B5C]">
+              13U House League Tournament
+            </h2>
+
+            <p className="mt-3 text-slate-700">
+              Schedule and tournament scores.
+            </p>
+
+            <div className="mt-5 overflow-hidden rounded-xl border border-slate-200">
+              <iframe
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcmuqFNoVovF6QMsQtmvvTmzMhfTztJWAfFXUPZtV6A0a4q4B69jSIfZ9haE91bQ7CPrzGobrBbilG/pubhtml?gid=798450824&single=true&widget=true&headers=false"
+                className="h-[700px] w-full"
+                title="13U House League Tournament Schedule and Scores"
+              />
+            </div>
+          </section>
+
+          {/* Open Full Sheet */}
+          <section className="pb-4 text-center">
+            <a
+              href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcmuqFNoVovF6QMsQtmvvTmzMhfTztJWAfFXUPZtV6A0a4q4B69jSIfZ9haE91bQ7CPrzGobrBbilG/pubhtml?gid=798450824&single=true&widget=true&headers=false"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#002B5C] px-6 py-3 font-semibold text-white shadow-md transition hover:bg-[#003B80]"
+            >
+              <ExternalLink size={18} />
+              Open Full Sheet
+            </a>
+          </section>
+
         </div>
-
-        {/* 11U AA */}
-        <div className="rounded-2xl bg-white p-5 shadow-lg">
-          <h2 className="mb-4 text-2xl font-bold text-[#002B5C]">
-            11U AA
-          </h2>
-
-          <div id="gc-scoreboard-widget-r5lf"></div>
-        </div>
-
-        {/* 11U AAA */}
-        <div className="rounded-2xl bg-white p-5 shadow-lg">
-          <h2 className="mb-4 text-2xl font-bold text-[#002B5C]">
-            11U AAA
-          </h2>
-
-          <div id="gc-scoreboard-widget-5hbm"></div>
-        </div>
-      </div>
-
-      <Script
-        src="https://widgets.gc.com/static/js/sdk.v1.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          if (!(window as any).GC) return;
-
-          // 11U A
-          (window as any).GC.scoreboard.init({
-            target: "#gc-scoreboard-widget-vmk4",
-            widgetId: "5e81870c-6ece-4959-b8af-52515000aab6",
-            maxVerticalGamesVisible: 4,
-          });
-
-          // 11U AA
-          (window as any).GC.scoreboard.init({
-            target: "#gc-scoreboard-widget-r5lf",
-            widgetId: "8791067e-a2fb-487d-b82b-a20b5b85e805",
-            maxVerticalGamesVisible: 4,
-          });
-
-          // 11U AAA
-          (window as any).GC.scoreboard.init({
-            target: "#gc-scoreboard-widget-5hbm",
-            widgetId: "168a85dc-27f1-4a4f-8013-3d20c9ef2461",
-            maxVerticalGamesVisible: 4,
-          });
-        }}
-      />
-    </main>
+      </main>
+    </>
   );
 }
