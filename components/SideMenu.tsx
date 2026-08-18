@@ -60,7 +60,7 @@ export default function SideMenu({
 
               <div>
                 <h2 className="text-lg font-bold text-[#002B5C]">
-                  MPMBA 11U
+                  MPMBA 13U
                 </h2>
 
                 <p className="text-sm text-slate-600">
