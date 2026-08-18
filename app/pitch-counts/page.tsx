@@ -14,18 +14,18 @@ export default function PitchCountsPage() {
           {/* Pitch Tracking */}
           <section className="rounded-2xl bg-white p-4 shadow-lg md:p-6">
             <h2 className="text-2xl font-bold text-[#002B5C]">
-              11U House League Pitch Tracking
+              13U House League Pitch Tracking
             </h2>
 
             <p className="mt-3 text-slate-700">
-              Pitch tracking for the 11U House League Tournament.
+              Pitch tracking for the 13U House League Tournament.
             </p>
 
             <div className="mt-5 overflow-hidden rounded-xl border border-slate-200">
               <iframe
                 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWPC3N9DePbBbIss0FNZNgSBM1ScVNKCPJRQhre0g4f2kQ9deNXFPSJglqauzESm5O3OL2raa8nKad/pubhtml?gid=0&single=true&widget=true&headers=false"
                 className="h-[700px] w-full"
-                title="11U House League Pitch Tracking"
+                title="13U House League Pitch Tracking"
               />
             </div>
           </section>
