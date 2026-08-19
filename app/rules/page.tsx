@@ -38,7 +38,7 @@ export default function RulesPage() {
 
               <li>
                 A pitcher may pitch a maximum of{" "}
-                <strong>4 innings per game (must be consecutive, a pitcher cannot pitch, play another position, then go back to pitch in same game.</strong>.
+                <strong>4 innings per game (must be consecutive, a pitcher cannot pitch, play another position, then go back to pitch in same game)</strong>.
               </li>
 
               <li>
