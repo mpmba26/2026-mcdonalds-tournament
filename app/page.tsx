@@ -38,10 +38,14 @@ export default function Home() {
         />
 
         <h1 className="text-3xl font-black leading-tight md:text-5xl">
-          MPMBA 13U
+          MPMBA 15U AAA
           <br />
-          House League Tournament
+          BNL Provincial Tournament
         </h1>
+
+        <p className="mt-4 text-xl text-blue-200">
+          September 4–6, 2026
+        </p>
       </section>
 
       {/* Tournament Sections */}
@@ -81,7 +85,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-1 text-green-800">
-                Currently no weather delays.
+                All games are on schedule.
               </p>
             </div>
           </div>
@@ -102,7 +106,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="rounded-xl bg-[#1877F2] p-5 text-white transition hover:scale-[1.02]"
             >
-              <h3 className="flex items-center gap-2 text-xl font-bold">
+              <h3 className="text-xl font-bold">
                 Facebook
               </h3>
 
