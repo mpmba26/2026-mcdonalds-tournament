@@ -52,7 +52,7 @@ export default function Home() {
         />
 
         <h1 className="text-3xl font-black leading-tight md:text-5xl">
-          MPMBA 15U AAA
+          15U AAA
           <br />
           BNL Provincial Tournament
         </h1>
