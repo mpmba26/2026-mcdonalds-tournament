@@ -62,13 +62,13 @@ export default function Home() {
         </p>
 
         {/* Participating Teams */}
-        <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-10">
+        <div className="mx-auto mt-6 flex max-w-3xl items-center justify-center gap-2 sm:gap-4 md:gap-8">
           <Image
             src="/images/Raiders.png"
             alt="Raiders"
             width={90}
             height={90}
-            className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+            className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
           />
 
           <Image
@@ -76,7 +76,7 @@ export default function Home() {
             alt="Phantoms"
             width={90}
             height={90}
-            className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+            className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
           />
 
           <Image
@@ -84,7 +84,7 @@ export default function Home() {
             alt="Blazers"
             width={90}
             height={90}
-            className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+            className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
           />
 
           <Image
@@ -92,7 +92,7 @@ export default function Home() {
             alt="Pirates"
             width={90}
             height={90}
-            className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+            className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
           />
 
           <Image
@@ -100,7 +100,7 @@ export default function Home() {
             alt="Caps"
             width={90}
             height={90}
-            className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+            className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
           />
         </div>
       </section>
