@@ -43,11 +43,12 @@ export default function Home() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#003B80] to-[#001E46] px-6 py-10 text-center text-white">
         <Image
-          src="/images/logo.png"
-          alt="Mount Pearl Minor Baseball"
-          width={160}
-          height={160}
-          className="mx-auto mb-6"
+          src="/images/BNL_Provincials_Logo_Color_2026.png"
+          alt="2026 Baseball NL Provincial Championships"
+          width={360}
+          height={360}
+          className="mx-auto mb-6 h-auto w-[280px] md:w-[360px]"
+          priority
         />
 
         <h1 className="text-3xl font-black leading-tight md:text-5xl">
