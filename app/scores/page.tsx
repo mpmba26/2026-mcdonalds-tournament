@@ -1,50 +1,68 @@
 "use client";
 
+import { useEffect } from "react";
+import Script from "next/script";
 import AppHeader from "@/components/AppHeader";
-import { ExternalLink } from "lucide-react";
 
-export default function SchedulePage() {
+declare global {
+  interface Window {
+    GC?: {
+      scoreboard?: {
+        init: (options: {
+          target: string;
+          widgetId: string;
+          maxVerticalGamesVisible?: number;
+        }) => void;
+      };
+    };
+  }
+}
+
+export default function ScoresPage() {
+  const initializeGameChanger = () => {
+    if (window.GC?.scoreboard) {
+      window.GC.scoreboard.init({
+        target: "#gc-scoreboard-widget-1ame",
+        widgetId: "296f1e76-66c9-4a1a-b2c0-50596a848910",
+        maxVerticalGamesVisible: 4,
+      });
+    }
+  };
+
+  useEffect(() => {
+    initializeGameChanger();
+  }, []);
+
   return (
     <>
-      <AppHeader title="Schedule / Scores" />
+      <AppHeader title="Scores" />
 
       <main className="min-h-screen bg-[#EAF3FB] px-4 py-6">
-        <div className="mx-auto max-w-6xl space-y-6">
-
-          {/* Schedule / Scores */}
-          <section className="rounded-2xl bg-white p-4 shadow-lg md:p-6">
+        <div className="mx-auto max-w-6xl">
+          <section className="rounded-2xl bg-white p-5 shadow-lg md:p-6">
             <h2 className="text-2xl font-bold text-[#002B5C]">
-              13U House League Tournament
+              15U AAA BNL Provincial Tournament
             </h2>
 
             <p className="mt-3 text-slate-700">
-              Schedule and tournament scores.
+              Live tournament scores and game information.
             </p>
 
-            <div className="mt-5 overflow-hidden rounded-xl border border-slate-200">
-              <iframe
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcmuqFNoVovF6QMsQtmvvTmzMhfTztJWAfFXUPZtV6A0a4q4B69jSIfZ9haE91bQ7CPrzGobrBbilG/pubhtml?gid=798450824&single=true&widget=true&headers=false"
-                className="h-[700px] w-full"
-                title="13U House League Tournament Schedule and Scores"
+            <div className="mt-6 overflow-hidden rounded-xl border border-slate-200">
+              <div
+                id="gc-scoreboard-widget-1ame"
+                className="min-h-[200px] w-full"
               />
             </div>
           </section>
-
-          {/* Open Full Sheet */}
-          <section className="pb-4 text-center">
-            <a
-              href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcmuqFNoVovF6QMsQtmvvTmzMhfTztJWAfFXUPZtV6A0a4q4B69jSIfZ9haE91bQ7CPrzGobrBbilG/pubhtml?gid=798450824&single=true&widget=true&headers=false"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#002B5C] px-6 py-3 font-semibold text-white shadow-md transition hover:bg-[#003B80]"
-            >
-              <ExternalLink size={18} />
-              Open Full Sheet
-            </a>
-          </section>
-
         </div>
       </main>
+
+      <Script
+        src="https://widgets.gc.com/static/js/sdk.v1.js"
+        strategy="afterInteractive"
+        onLoad={initializeGameChanger}
+      />
     </>
   );
 }
