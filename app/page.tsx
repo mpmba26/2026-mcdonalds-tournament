@@ -57,7 +57,11 @@ export default function Home() {
           BNL Provincial Tournament
         </h1>
 
-        <p className="mt-4 text-xl text-blue-200">
+        <p className="mt-4 text-xl font-semibold text-white">
+          Hosted by Mount Pearl Minor Baseball
+        </p>
+
+        <p className="mt-2 text-xl text-blue-200">
           September 4–6, 2026
         </p>
       </section>
