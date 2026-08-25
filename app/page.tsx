@@ -11,24 +11,28 @@ export default function Home() {
       title: "Schedule",
       href: "https://drive.google.com/file/d/1BsDmsQ7WxToLp9dXNAtNg9t570EySTAq/view?usp=sharing",
       external: true,
+      disabled: false,
     },
     {
       icon: Trophy,
       title: "Scores",
       href: "/scores",
       external: false,
+      disabled: false,
     },
     {
       icon: FaBaseballBall,
       title: "Pitch Tracking",
-      href: "/pitch-counts",
+      href: "",
       external: false,
+      disabled: true,
     },
     {
       icon: BookOpen,
       title: "Rules",
       href: "https://baseballnl.com/article/76482",
       external: true,
+      disabled: false,
     },
   ];
 
@@ -60,26 +64,48 @@ export default function Home() {
       {/* Tournament Sections */}
       <section className="mx-auto max-w-4xl px-4 py-8">
         <div className="grid gap-5 sm:grid-cols-2">
-          {buttons.map((button) =>
-            button.external ? (
-              <a
-                key={button.title}
-                href={button.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl bg-white p-6 text-center shadow-lg transition hover:scale-[1.02] active:scale-95"
-              >
-                <button.icon
-                  size={52}
-                  strokeWidth={2}
-                  className="text-[#002B5C]"
-                />
+          {buttons.map((button) => {
+            if (button.disabled) {
+              return (
+                <div
+                  key={button.title}
+                  className="flex min-h-[180px] cursor-default flex-col items-center justify-center rounded-2xl bg-white p-6 text-center shadow-lg"
+                >
+                  <FaBaseballBall
+                    size={52}
+                    className="text-[#002B5C]"
+                  />
 
-                <h2 className="mt-4 text-xl font-bold text-[#002B5C]">
-                  {button.title}
-                </h2>
-              </a>
-            ) : (
+                  <h2 className="mt-4 text-xl font-bold text-[#002B5C]">
+                    {button.title}
+                  </h2>
+                </div>
+              );
+            }
+
+            if (button.external) {
+              return (
+                <a
+                  key={button.title}
+                  href={button.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl bg-white p-6 text-center shadow-lg transition hover:scale-[1.02] active:scale-95"
+                >
+                  <button.icon
+                    size={52}
+                    strokeWidth={2}
+                    className="text-[#002B5C]"
+                  />
+
+                  <h2 className="mt-4 text-xl font-bold text-[#002B5C]">
+                    {button.title}
+                  </h2>
+                </a>
+              );
+            }
+
+            return (
               <Link
                 key={button.title}
                 href={button.href}
@@ -95,8 +121,8 @@ export default function Home() {
                   {button.title}
                 </h2>
               </Link>
-            )
-          )}
+            );
+          })}
         </div>
       </section>
 
