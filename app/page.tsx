@@ -1,16 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import AppHeader from "@/components/AppHeader";
-import { CalendarDays, BookOpen } from "lucide-react";
+import { CalendarDays, Trophy, BookOpen } from "lucide-react";
 import { FaBaseballBall } from "react-icons/fa";
 
 export default function Home() {
   const buttons = [
     {
       icon: CalendarDays,
-      title: "Schedule / Scores",
+      title: "Schedule",
       href: "https://drive.google.com/file/d/1BsDmsQ7WxToLp9dXNAtNg9t570EySTAq/view?usp=sharing",
       external: true,
+    },
+    {
+      icon: Trophy,
+      title: "Scores",
+      href: "/scores",
+      external: false,
     },
     {
       icon: FaBaseballBall,
@@ -53,7 +59,7 @@ export default function Home() {
 
       {/* Tournament Sections */}
       <section className="mx-auto max-w-4xl px-4 py-8">
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2">
           {buttons.map((button) =>
             button.external ? (
               <a
