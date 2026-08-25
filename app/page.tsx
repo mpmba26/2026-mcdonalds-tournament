@@ -9,17 +9,20 @@ export default function Home() {
     {
       icon: CalendarDays,
       title: "Schedule / Scores",
-      href: "/schedule",
+      href: "https://drive.google.com/file/d/1BsDmsQ7WxToLp9dXNAtNg9t570EySTAq/view?usp=sharing",
+      external: true,
     },
     {
       icon: FaBaseballBall,
       title: "Pitch Tracking",
       href: "/pitch-counts",
+      external: false,
     },
     {
       icon: BookOpen,
       title: "Rules",
       href: "/rules",
+      external: false,
     },
   ];
 
@@ -51,23 +54,43 @@ export default function Home() {
       {/* Tournament Sections */}
       <section className="mx-auto max-w-4xl px-4 py-8">
         <div className="grid gap-5 md:grid-cols-3">
-          {buttons.map((button) => (
-            <Link
-              key={button.title}
-              href={button.href}
-              className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl bg-white p-6 text-center shadow-lg transition hover:scale-[1.02] active:scale-95"
-            >
-              <button.icon
-                size={52}
-                strokeWidth={2}
-                className="text-[#002B5C]"
-              />
+          {buttons.map((button) =>
+            button.external ? (
+              <a
+                key={button.title}
+                href={button.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl bg-white p-6 text-center shadow-lg transition hover:scale-[1.02] active:scale-95"
+              >
+                <button.icon
+                  size={52}
+                  strokeWidth={2}
+                  className="text-[#002B5C]"
+                />
 
-              <h2 className="mt-4 text-xl font-bold text-[#002B5C]">
-                {button.title}
-              </h2>
-            </Link>
-          ))}
+                <h2 className="mt-4 text-xl font-bold text-[#002B5C]">
+                  {button.title}
+                </h2>
+              </a>
+            ) : (
+              <Link
+                key={button.title}
+                href={button.href}
+                className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl bg-white p-6 text-center shadow-lg transition hover:scale-[1.02] active:scale-95"
+              >
+                <button.icon
+                  size={52}
+                  strokeWidth={2}
+                  className="text-[#002B5C]"
+                />
+
+                <h2 className="mt-4 text-xl font-bold text-[#002B5C]">
+                  {button.title}
+                </h2>
+              </Link>
+            )
+          )}
         </div>
       </section>
 
