@@ -27,8 +27,8 @@ export default function Home() {
     {
       icon: BookOpen,
       title: "Rules",
-      href: "/rules",
-      external: false,
+      href: "https://baseballnl.com/article/76482",
+      external: true,
     },
   ];
 
