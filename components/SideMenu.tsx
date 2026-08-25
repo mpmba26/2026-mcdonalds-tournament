@@ -7,6 +7,7 @@ import {
   X,
   House,
   CalendarDays,
+  Trophy,
   BookOpen,
 } from "lucide-react";
 import { FaBaseballBall } from "react-icons/fa";
@@ -23,10 +24,34 @@ export default function SideMenu({
   const pathname = usePathname();
 
   const menuItems = [
-    { title: "Home", href: "/", icon: House },
-    { title: "Schedule / Scores", href: "/schedule", icon: CalendarDays },
-    { title: "Pitch Tracking", href: "/pitch-counts", icon: FaBaseballBall },
-    { title: "Rules", href: "/rules", icon: BookOpen },
+    {
+      title: "Home",
+      href: "/",
+      icon: House,
+    },
+    {
+      title: "Schedule",
+      href: "https://drive.google.com/file/d/1BsDmsQ7WxToLp9dXNAtNg9t570EySTAq/view?usp=sharing",
+      icon: CalendarDays,
+      external: true,
+    },
+    {
+      title: "Scores",
+      href: "/scores",
+      icon: Trophy,
+    },
+    {
+      title: "Pitch Tracking",
+      href: "",
+      icon: FaBaseballBall,
+      disabled: true,
+    },
+    {
+      title: "Rules",
+      href: "https://baseballnl.com/article/76482",
+      icon: BookOpen,
+      external: true,
+    },
   ];
 
   return (
@@ -44,7 +69,9 @@ export default function SideMenu({
       {/* Menu */}
       <aside
         className={`fixed left-0 top-0 z-[10001] flex h-full w-72 flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          isOpen
+            ? "translate-x-0"
+            : "-translate-x-full"
         }`}
       >
         {/* Header */}
@@ -60,11 +87,11 @@ export default function SideMenu({
 
               <div>
                 <h2 className="text-lg font-bold text-[#002B5C]">
-                  MPMBA 13U
+                  15U AAA
                 </h2>
 
                 <p className="text-sm text-slate-600">
-                  House League Tournament
+                  BNL Provincial Tournament
                 </p>
               </div>
             </div>
@@ -82,29 +109,72 @@ export default function SideMenu({
 
         {/* Navigation */}
         <nav className="flex-1">
-          {menuItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={onClose}
-              className={`flex items-center gap-4 px-6 py-4 text-lg font-medium transition-all ${
-                pathname === item.href
-                  ? "bg-[#002B5C] text-white"
-                  : "text-slate-800 hover:bg-slate-100"
-              }`}
-            >
-              <item.icon
-                size={22}
-                className={
-                  pathname === item.href
-                    ? "text-white"
-                    : "text-[#002B5C]"
-                }
-              />
+          {menuItems.map((item) => {
+            const isActive =
+              !item.external &&
+              !item.disabled &&
+              pathname === item.href;
 
-              {item.title}
-            </Link>
-          ))}
+            if (item.disabled) {
+              return (
+                <div
+                  key={item.title}
+                  className="flex cursor-default items-center gap-4 px-6 py-4 text-lg font-medium text-slate-800"
+                >
+                  <item.icon
+                    size={22}
+                    className="text-[#002B5C]"
+                  />
+
+                  {item.title}
+                </div>
+              );
+            }
+
+            if (item.external) {
+              return (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onClose}
+                  className="flex items-center gap-4 px-6 py-4 text-lg font-medium text-slate-800 transition-all hover:bg-slate-100"
+                >
+                  <item.icon
+                    size={22}
+                    className="text-[#002B5C]"
+                  />
+
+                  {item.title}
+                </a>
+              );
+            }
+
+            return (
+              <Link
+                key={item.title}
+                href={item.href}
+                onClick={onClose}
+                className={`flex items-center gap-4 px-6 py-4 text-lg font-medium transition-all ${
+                  isActive
+                    ? "bg-[#002B5C] text-white"
+                    : "text-slate-800 hover:bg-slate-100"
+                }`}
+              >
+                <item.icon
+                  size={22}
+                  className={
+                    isActive
+                      ? "text-white"
+                      : "text-[#002B5C]"
+                  }
+                />
+
+                {item.title}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Footer */}
