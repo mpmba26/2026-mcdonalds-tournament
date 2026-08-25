@@ -42,9 +42,8 @@ export default function SideMenu({
     },
     {
       title: "Pitch Tracking",
-      href: "",
+      href: "/pitch-counts",
       icon: FaBaseballBall,
-      disabled: true,
     },
     {
       title: "Rules",
@@ -112,24 +111,7 @@ export default function SideMenu({
           {menuItems.map((item) => {
             const isActive =
               !item.external &&
-              !item.disabled &&
               pathname === item.href;
-
-            if (item.disabled) {
-              return (
-                <div
-                  key={item.title}
-                  className="flex cursor-default items-center gap-4 px-6 py-4 text-lg font-medium text-slate-800"
-                >
-                  <item.icon
-                    size={22}
-                    className="text-[#002B5C]"
-                  />
-
-                  {item.title}
-                </div>
-              );
-            }
 
             if (item.external) {
               return (
