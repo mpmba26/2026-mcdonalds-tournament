@@ -9,7 +9,7 @@ export default function Home() {
     {
       icon: CalendarDays,
       title: "Schedule",
-      href: "https://drive.google.com/file/d/1BsDmsQ7WxToLp9dXNAtNg9t570EySTAq/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1aAblNIl7_6p5gLDfBxB0pqucSO-L8fyI/view?usp=sharing",
       external: true,
     },
     {
