@@ -148,21 +148,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tournament Status */}
+      {/* Tournament Update */}
       <section className="mx-auto max-w-4xl px-5 pb-6">
-        <div className="rounded-2xl bg-green-100 p-5 shadow-lg">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500 text-xl font-bold text-white">
-              ✓
+        <div className="rounded-2xl bg-amber-100 p-5 shadow-lg">
+          <div className="flex items-start gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-xl font-bold text-white">
+              !
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-green-900">
-                Tournament Status
+              <h2 className="text-lg font-bold text-amber-900">
+                Tournament Update
               </h2>
 
-              <p className="mt-1 text-green-800">
-                All games are on schedule.
+              <p className="mt-1 text-amber-800">
+                There have been changes to the schedule for Saturday.
+                Please check the Schedule and GameChanger for the most
+                up-to-date game times and information.
               </p>
             </div>
           </div>
