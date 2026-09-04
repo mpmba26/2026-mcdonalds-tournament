@@ -15,13 +15,13 @@ export default function PitchCountsPage() {
             </h2>
 
             <p className="mt-3 text-slate-700">
-              Tournament pitch tracking.
+              Tournament pitch tracking for all participating teams.
             </p>
 
             <div className="mt-5 overflow-hidden rounded-xl border border-slate-200">
               <iframe
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSuUrh9IT4K6TrlAfqqrXhbHFkN9qKU72AMnDeR8orVTYmK60kzQ_QWxPaIF0mEMjNvxa3YcnBId1NL/pubhtml?gid=764618010&single=true&widget=true&headers=false"
-                className="h-[700px] w-full"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSuUrh9IT4K6TrlAfqqrXhbHFkN9qKU72AMnDeR8orVTYmK60kzQ_QWxPaIF0mEMjNvxa3YcnBId1NL/pubhtml?widget=true&headers=false"
+                className="h-[800px] w-full"
                 title="15U AAA BNL Provincial Tournament Pitch Tracking"
               />
             </div>
